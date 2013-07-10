@@ -9,10 +9,8 @@
 
    <link rel="start" href="/" />
    
-   <!-- link ref="shortcut icon" href="./favicon.ico"-->	
    <LINK rel=icon type=image/x-icon href="./favicon.ico">
    <LINK rel="shortcut icon" type=image/x-icon href="./favicon.ico">
-   <!-- link rel="icon" href="favicon.gif" type="image/gif" -->
 	
    <link rel="alternate" type="application/atom+xml" href="/feed" title="RSS feed" />	
    <link rel="stylesheet" href="./files/css/blueprint/screen.css" type="text/css" />
@@ -28,7 +26,7 @@
 		<h1><a href="./" title="念愿的个人网站">念愿的个人网站</a></h1>
 		<ul class="nav">
 			<li><a class="home" href="./">首页</a></li>
-			<li><a class="home" href="./cn">中文博客</a></li>
+			<li><a class="home" href="http://blog.cailiwei.com.cn">中文博客</a></li>
 			<li><a class="home" href="./en">English Blog</a></li>
 			<li><a class="home" href="./cv">简历</a></li>
 			<li><a class="home" href="./info" target="_blank" >留言</a></li>
@@ -57,7 +55,7 @@
 
 	<div class="section" id="blog1-posts-list">
 		<h1 id="id165">博客</h1>
-		<p>我计划以后主要学习小结的更新托管在github上的<a href="http://blog.cailiwei.com.cn/" target="_blank">Octopress博客</a>，主要记录自己在学习过程中的心得体会。近期内容：</p>
+		<p>我计划以后主要学习小结的更新托管在github上的<a href="http://blog.cailiwei.com.cn/" target="_blank">博客</a>，主要记录自己在学习过程中的心得体会。近期内容：</p>
 		<div class="loading"><img src="./images/loading.gif">正在加载...</div>
 	</div>	
 	
@@ -66,6 +64,7 @@
 		<div class="loading"><img src="./images/loading.gif">正在加载...</div>
 	</div>
 		
+	<!--
 	<div class="section">
 		<h1 id="id166">笔记</h1>
 		<p>记录一下学习过程中，遇到问题后搜索并解决的各种<a href="http://www.cailiwei.com.cn/write" target="_blank">点子和想法</a></p>
@@ -96,10 +95,10 @@
 			<li><a href="https://github.com/cailiwei" target="_blank">my github</a></li>
 		</ul>
 	</div>
-
+	-->
 	<div class="section">
 		<h1 id="contact">联系方式</h1>
-		<p><a href=mailto:cailiwei712@163.com><img src="./images/mailbox.png" width="35px" />cailiwei712@163.com</a></p>
+		<p><a href=mailto:cailiwei712@163.com><img src="./images/mailbox.png" width="15px" />cailiwei712@163.com</a></p>
 	</div>
 
 	</div>
@@ -126,7 +125,7 @@
 
 <script type="text/javascript">
 		$(document).ready(function() {
-			$.getJSON("/cn/recent.json",function(data){
+			$.getJSON("http://blog.cailiwei.com.cn/recent.json",function(data){
 				var content ="<ul class=\"compact recent\">";
 				$.each(data,function(i,item){
 				
@@ -139,7 +138,7 @@
 				$("#blog1-posts-list").append(content);
 			});
 
-			$.getJSON("/art/recent.json",function(data){
+			$.getJSON("http://blog.cailiwei.com.cn/recent.json",function(data){
 				var content ="<ul class=\"compact recent\">";
 				$.each(data,function(i,item){
 				
@@ -152,12 +151,12 @@
 				$("#blog2-posts-list").append(content);
 			});
 		});	
-	</script>
+</script>
 
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-27377274-1']);
+  _gaq.push(['_setAccount', 'UA-42340897-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {
