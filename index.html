@@ -54,7 +54,7 @@
 	<p>欢迎你订阅我的<a href="http://blog.cailiwei.com.cn/" target="_blank">新博客</a>以及<a href="./info" target="_blank">与我联系</a>。</p>
 
 	<div class="section" id="blog1-posts-list">
-		<h1 id="id165">博客</h1>
+		<h1>博客</h1>
 		<p>我计划以后主要学习小结的更新托管在github上的<a href="http://blog.cailiwei.com.cn/" target="_blank">博客</a>，主要记录自己在学习过程中的心得体会。近期内容：</p>
 		<div class="loading"><img src="./images/loading.gif">正在加载...</div>
 	</div>	
@@ -64,38 +64,6 @@
 		<div class="loading"><img src="./images/loading.gif">正在加载...</div>
 	</div>
 		
-	<!--
-	<div class="section">
-		<h1 id="id166">笔记</h1>
-		<p>记录一下学习过程中，遇到问题后搜索并解决的各种<a href="http://www.cailiwei.com.cn/write" target="_blank">点子和想法</a></p>
-		<ul class="compact recent">
-			<li><a href="http://www.cailiwei.com.cn/write/1/" target="_blank" rel="nofollow"> 终端设置http代理上网的方法</a></li>
-			<li><a href="http://www.cailiwei.com.cn/write/2/" target="_blank" rel="nofollow"> 对apt-get设置代理上网的方法</a></li>
-			<li><a href="http://www.cailiwei.com.cn/write/3/" target="_blank" rel="nofollow">设置ssh通过http代理协议的方法</a></li>
-			<li><a href="http://www.cailiwei.com.cn/write/4/" target="_blank" rel="nofollow">putty设置color方法</a></li>
-		</ul>
-	</div>
-
-	<div class="section">
-		<p>学习<a href="http://www.cailiwei.com.cn/write" target="_blank">计划</a>以及要解决的问题</p>
-		<ul class="compact recent">
-			<li><a href="http://www.cailiwei.com.cn/files/pdf/state-space.pdf" target="_blank" rel="nofollow">学车计划</a></li>	
-			<li><a href="http://www.cailiwei.com.cn/files/pdf/monte-carlo.pdf" target="_blank" rel="nofollow">读书计划</a></li>	
-			<li><a href="http://www.cailiwei.com.cn/plan/" target="_blank" rel="nofollow">开支计划</a></li>			
-			<li><a href="http://www.cailiwei.com.cn/question/" target="_blank" rel="nofollow">待解决的问题汇总</a></li>			
-		</ul>
-	</div>
-	<div class="section">
-		<p>一些社区和库:</p>
-		<ul>
-			<li><a href="http://my.oschina.net/cailiwei712" target="_blank">开源中国</a></li>
-			<li><a href="http://sourceforge.net/" target="_blank">sourceforge</a></li>
-			<li><a href="http://wiki.ubuntu.org.cn/" target="_blank">Ubuntu中国</a></li>
-			<li><a href="http://wiki.linuxdeepin.com/index.php?title=%E9%A6%96%E9%A1%B5" target="_blank">Deepin社区</a></li>
-			<li><a href="https://github.com/cailiwei" target="_blank">my github</a></li>
-		</ul>
-	</div>
-	-->
 	<div class="section">
 		<h1 id="contact">联系方式</h1>
 		<p><a href=mailto:cailiwei712@163.com><img src="./images/mailbox.png" width="15px" />cailiwei712@163.com</a></p>
@@ -105,7 +73,6 @@
   
 	 <div id="footer">
 		<address>
-
 			<span class="copyright">
 				Content by 
 				<a href="./">Levy</a> 
@@ -120,26 +87,27 @@
 	  </div>
 </div>
 
-
-<script src="/files/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-		$(document).ready(function() {
-			$.getJSON("http://blog.cailiwei.com.cn/recent.json",function(data){
-				var content ="<ul class=\"compact recent\">";
+	function do_jsonp() {
+		$.getJSON("http://blog.cailiwei.com.cn/recent.json"function(data) {
+				var content ="<ul class=\"compact\">";
 				$.each(data,function(i,item){
-				
-				content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
-				
+					content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
 				});
-				
+
 				content +="</ul>";
 				$("#blog1-posts-list .loading").remove();
 				$("#blog1-posts-list").append(content);
-			});
+		});
+	}
+</script>
 
-			$.getJSON("http://blog.cailiwei.com.cn/recent.json",function(data){
-				var content ="<ul class=\"compact recent\">";
+<script src="/files/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$.getJSON("/en/recent.json",function(data){
+				var content ="<ul class=\"compact\">";
 				$.each(data,function(i,item){
 				
 				content += "<li><span class=\"date\">"+ item.date + "</span><a href=\""+item.url+"\">"+ item.title +"</a></li>";
